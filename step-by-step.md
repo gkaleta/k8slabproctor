@@ -358,3 +358,11 @@ Please see: https://blogs.msdn.microsoft.com/stevelasker/2016/06/14/configuring-
 ## Dealing with Anti-Virus
  
 Symantec AV protection can block `az acs get-credentials` command while running inside Linux sub system for Windows. `Sudo apt-get update` also fails. 
+
+## get get-credentials to work 
+
+Ensure you are running az cli 2.0.23 in order to get-credentials to work. 
+One way of solving this is by adding a docker container: 
+~~~sh
+docker run -v ${HOME}:/root -it azuresdk/azure-cli-python:2.0.23
+~~~
